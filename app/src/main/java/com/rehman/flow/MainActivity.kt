@@ -62,7 +62,6 @@ class MainActivity : AppCompatActivity() {
 
                                     initRecycler(response.string().stringToObject<ArrayList<PostModel>>())
 
-                                    Log.d("RESPONSE", "Data ${it.data.string()}")
                                 }
 
 

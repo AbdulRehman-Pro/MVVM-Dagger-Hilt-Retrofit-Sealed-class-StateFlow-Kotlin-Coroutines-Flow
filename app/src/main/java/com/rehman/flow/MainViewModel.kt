@@ -15,12 +15,10 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(private val remoteDataRepository: RemoteDataRepository) :
     ViewModel() {
 
-    var apiResponse: MutableLiveData<Resource<ResponseBody>> = MutableLiveData()
-
     var apiStateFlow: MutableStateFlow<Resource<ResponseBody>> = MutableStateFlow(Resource.Empty())
     fun getPosts() {
         viewModelScope.launch {
-            apiResponse.value = Resource.Loading()
+            apiStateFlow.value = Resource.Loading()
             remoteDataRepository.getPost().collect {
                 apiStateFlow.value = it
             }
