@@ -3,6 +3,7 @@ package com.rehman.flow.di
 import com.google.gson.GsonBuilder
 import com.google.gson.Strictness
 import com.rehman.flow.network.ApiService
+import com.rehman.flow.network.RemoteDataRepository
 import com.rehman.flow.utils.AppConstants
 import dagger.Module
 import dagger.Provides
@@ -82,6 +83,5 @@ object ApiModule {
         // Return the auth token from a secure source or a method that retrieves it
         return null
     }
-
 
 }
